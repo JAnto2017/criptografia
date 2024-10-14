@@ -1,13 +1,17 @@
 # Criptografía Informática Básica
 
 - [Criptografía Informática Básica](#criptografía-informática-básica)
-  - [Criptografía Conceptos Básicos](#criptografía-conceptos-básicos)
+  - [Conceptos Básicos](#conceptos-básicos)
     - [Comunicación Segura](#comunicación-segura)
   - [Criptografía Simétrica](#criptografía-simétrica)
+    - [Tipos de Cifrado Simétrico](#tipos-de-cifrado-simétrico)
+      - [Cifrado por Flujo](#cifrado-por-flujo)
+      - [Cifrado por Bloque](#cifrado-por-bloque)
+  - [Criptografía Asimétrica](#criptografía-asimétrica)
 
 - - -
 
-## Criptografía Conceptos Básicos
+## Conceptos Básicos
 
 No es lo mismo Codificar que Cifrar.
 
@@ -45,3 +49,46 @@ Por último, el _acceso_ y _disponibilidad_ del servicio y los datos deben estar
 
 ## Criptografía Simétrica
 
+Es la que utiliza las mismas claves para cifrar que para descifrar.
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+
+![alt text](image.png)
+
+El receptor debe tener la clave, al igual que el emisor. Esto es un problema, ya que si envío la clave al receptor por un medio no seguro puede ser interceptada.
+
+### Tipos de Cifrado Simétrico
+
+- El cifrado _bloque_. Consiste en segmentar la información por bloques y cifrarlo. Luego se juntan en un solo bloque único.
+- El cifrado _por flujo_. El cifrado se realiza bit a bit, palabra a palabra.
+
+#### Cifrado por Flujo
+
+![alt text](image-1.png)
+
+#### Cifrado por Bloque
+
+![alt text](image-2.png)
+
+## Criptografía Asimétrica
+
+Este tipo de cifrado usa una clave para el cifrado y otra diferente para el descifrado. Cada usuario (emisor y receptor) tienen un par de claves:
+
+- _Clave Pública_. Es conocida por todos, no es secreta.
+- _Clave Privada_. Esta es secreta y única para cada persona.
+
+Ambas claves son complementarias. Si cifras con la _clave pública_, puedes descrifrar con la _clave privada_, y viceversa. Son complementarias entre sí.
+
+Para la _confidencialidad_ debemos cifrar con la _clave pública_ de la persona a la que vamos a enviar el mensaje. De esta forma, solo el receptor que tiene la _clave privada_ podrá descrifrar el mensaje.
+
+Para la _autenticación_ (el emisor) firmará con la _clave privada_ para que cualquier otra persona a la que enviaremos el mensaje, con nuestra _clave pública_ pueda descrifrar el mensaje. Y así averiguar que somo nosotros (el emisor) el que le hemos enviado el mensaje.
+
+![alt text](image-3.png)
+
+![alt text](image-4.png)
