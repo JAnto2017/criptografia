@@ -53,10 +53,10 @@ Es la que utiliza las mismas claves para cifrar que para descifrar.
 
 ```mermaid
 graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
+    Mensaje-->Clave;
+    Clave-->Cifrado;
+    Cifrado-->Clave;
+    Clave-->Descifrado;
 ```
 
 ![alt text](image.png)
