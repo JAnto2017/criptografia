@@ -8,6 +8,8 @@
       - [Cifrado por Flujo](#cifrado-por-flujo)
       - [Cifrado por Bloque](#cifrado-por-bloque)
   - [Criptografía Asimétrica](#criptografía-asimétrica)
+  - [HASH en Criptografía](#hash-en-criptografía)
+    - [Algoritmo para HASH](#algoritmo-para-hash)
 
 - - -
 
@@ -92,3 +94,69 @@ Para la _autenticación_ (el emisor) firmará con la _clave privada_ para que cu
 ![alt text](image-3.png)
 
 ![alt text](image-4.png)
+
+## HASH en Criptografía
+
+En un **HASH** en Criptografía siempre sale la misma cadena de bits, independientemente del tamaño del archivo a codificar. El resultado de un **HASH** es de 256 bits.
+
+Sirve además para generar un identificador único del archivo. Habrá un **HASH** por cada palabra o archivo.
+
+- **HASH** no utiliza clave.
+- Cifrado si utiliza clave.
+
+### Algoritmo para HASH
+
+1. Determinar número de letras de la palabra de entrada y numerarlos empezando por el uno.
+2. Sumar la primera y última letra. El resultado es la primera parte del HASH.
+3. Sumar las posiciones pares, multiplicar por el sumatorio de las posiciones impares. Si el resultado es un número de dos cifras, dividir entre 10 y redondear a la baja. El resultado es el segundo número del HASH.
+4. Elevar al cuadrado los valores numéricos de las letras que conforman la palabra y sumarlos. Si el resultado es de dos cifras, dividir por 10 y redondear a la baja.
+5. Sumar primera y segunda posición y dividir entre el número de letras. Redondear al entero más próximo. Este es el último paso para crear el HASH.
+
+El proceso de crear un **HASH** a partir de una palabra, es _unidireccional_. No se puede obtener la palabra a partir del **HASH**.
+
+La otra particularidad de los **HASH** es que son únicos. Nunca habrá dos mensajes con el mismo **HASH** utilizando el mismo algoritmo.
+
+Otra propiedad que tienen los **HASH** es que cambiando 1 bit de la palabra, el **HASH** debe cambiar solo la mitad.
+
+Los algoritmos para **HASH** más conocidos en el mundo son:
+
+- **MD5**. Algoritmo que fue crackeado.
+- **SHA1**. Algoritmo que fue crackeado.
+- **SHA256**. Algoritmos utilizado actualmente como estándar.
+
+```python
+import hashlib
+class HASH:
+  def generaHash(h):
+    digest=h.hexdigest()
+    return digest
+
+x=0
+while x<1:
+  print("Elegir el algoritmo a usar: ")
+  print("1) SHA256")
+  print("2) SHA512")
+  print("3) Fin programa")
+  nAlgoritmo=int(input())
+  print("Intro palabra: ")
+  datos=input()
+  algoritmo=""
+
+  if nAlgoritmo != 3:
+    if nAlgoritmo == 1:
+      algoritmo="sha256"
+    elif nAltogitmo == 2:
+      algoritmo="sha512"
+    
+    bdatos = bytes(datos,'utf-8')
+    h = hashlib.new(algoritmo, bdatos)
+    hash1 = HASH.generaHash(h)
+    print()
+    print(hash)
+    print()
+    x=0
+  else:
+    x=1
+
+pritn("FIN")
+```
