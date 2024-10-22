@@ -10,6 +10,9 @@
   - [Criptografía Asimétrica](#criptografía-asimétrica)
   - [HASH en Criptografía](#hash-en-criptografía)
     - [Algoritmo para HASH](#algoritmo-para-hash)
+  - [¿Por qué un HASH protege las contraseñas?](#por-qué-un-hash-protege-las-contraseñas)
+    - [Enlaces a web con el uso del HASH](#enlaces-a-web-con-el-uso-del-hash)
+    - [Caracterísiticas básicas de los algoritmos HASH](#caracterísiticas-básicas-de-los-algoritmos-hash)
 
 - - -
 
@@ -160,3 +163,35 @@ while x<1:
 
 pritn("FIN")
 ```
+
+## ¿Por qué un HASH protege las contraseñas?
+
+En una página web, al loguearse con el usuario y la contraseña. Si en el código HTML cambiamos la propiedad _password_ por la de _txt_ podríamos ver el texto en claro de la contraseña. Para evitar este inconveniente se utilizan los **HASH**.
+
+El **HASH** es único e irrepetible para cada texto de entrada. Un ejemplo del uso de **HASH** para codificar la frase _hola mundo_ es el siguiente:
+
+![alt text](image-5.png)
+
+Por tanto, son muy útiles para aplicar el **HASH** sobre contraseñas cifradas. Nunca a partir del **HASH** se podrá obtener la contraseña, no es reversible.
+
+### Enlaces a web con el uso del HASH
+
+En la siguiente página web [Crack HASH](https://crackstation.net/) permite obtener la contraseña a partir del **HASH** usando fuerza bruta.
+
+Una web con un generador de **HASH**: [MD5 Hash Generator](https://www.md5hashgenerator.com/).
+
+### Caracterísiticas básicas de los algoritmos HASH
+
+- **MD5**: la longitud del resumen resultante es de 128 bits. Es vulnerable.
+- **SHA1**: la longitud del resumen resultante es de 160 bits. Es vulnerable.
+- **SHA256**: la longitud del resumen resultante es de 256 bits. No es vulnerable.
+- **SHA512**: la longitud del resumen resultante es de 512 bits. No es vulnerable.
+
+| Caracterísitca | Función HASH | Cifrado |
+| --- | --- | --- |
+| Propósito | Resumir/Verificar integridad | Proteger confidencialidad |
+| Reversibilidad | Irreversible | Reversible (con clave) |
+| Uso de clave | No | Si |
+| Salida | Longitud fija | Variable, basada en la entrada |
+| Uso común | Verificación de datos | Protección de información privada |
+| Algoritmos típicos | MD5, SHA-256 | AES, RSA |
