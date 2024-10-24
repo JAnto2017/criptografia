@@ -13,6 +13,7 @@
   - [¿Por qué un HASH protege las contraseñas?](#por-qué-un-hash-protege-las-contraseñas)
     - [Enlaces a web con el uso del HASH](#enlaces-a-web-con-el-uso-del-hash)
     - [Caracterísiticas básicas de los algoritmos HASH](#caracterísiticas-básicas-de-los-algoritmos-hash)
+  - [Qué es la Firma Digital](#qué-es-la-firma-digital)
 
 - - -
 
@@ -195,3 +196,23 @@ Una web con un generador de **HASH**: [MD5 Hash Generator](https://www.md5hashge
 | Salida | Longitud fija | Variable, basada en la entrada |
 | Uso común | Verificación de datos | Protección de información privada |
 | Algoritmos típicos | MD5, SHA-256 | AES, RSA |
+
+## Qué es la Firma Digital
+
+La **Firma Digital** utiliza el **HASH**. Por lo que, es un proceso o mecanismo que permite a un receptor del mensaje, validar la identidad o el origen del mensaje mandado por el transmisor.
+
+La **Firma Digital** aporta:
+
+- _Autenticación_. Confirmación de la persona propietaria del mensaje.
+- _No repudio_. Aceptación del mensaje cuando viene de una fuente fiable.
+
+La **Firma Digital** se basa en la criptografía de _clave asimétrica o pública/privada_.
+
+![alt text](image-7.png)
+
+![alt text](image-6.png)
+
+Los pasos para la realización de la **Firma Digital** y posterior _autenticación_ y _no repudio_ son los siguientes:
+
+- Alice envía mensaje a Bob. Para ello el texto lo convierte en **HASH** y luego lo codifica con la **clave privada**.
+- Bob recibe el mensaje enviado por Alice. Para recuperar el texto, descrifra con la **clave pública** obteniendo el **HASH** validando así que es Alice el propietario.
