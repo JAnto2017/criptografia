@@ -14,6 +14,7 @@
     - [Enlaces a web con el uso del HASH](#enlaces-a-web-con-el-uso-del-hash)
     - [Caracterísiticas básicas de los algoritmos HASH](#caracterísiticas-básicas-de-los-algoritmos-hash)
   - [Qué es la Firma Digital](#qué-es-la-firma-digital)
+  - [Cómo funciona la red TOR y la DEEP WEB](#cómo-funciona-la-red-tor-y-la-deep-web)
 
 - - -
 
@@ -216,3 +217,11 @@ Los pasos para la realización de la **Firma Digital** y posterior _autenticaci�
 
 - Alice envía mensaje a Bob. Para ello el texto lo convierte en **HASH** y luego lo codifica con la **clave privada**.
 - Bob recibe el mensaje enviado por Alice. Para recuperar el texto, descrifra con la **clave pública** obteniendo el **HASH** validando así que es Alice el propietario.
+
+## Cómo funciona la red TOR y la DEEP WEB
+
+La arquitectura _cliente/servidor_ es la estándar. Desde el _cliente_ se realizan las peticiones al _servidor_, el cual, devuelve lo solicitado.
+
+La arquitectura _onion routing_ (enrutamiento cebolla) se basa en las capas, varios servidor procesando la información solicitada. En cada uno de los servidores, se tiene una IP diferente. El objetivo es el _anonamito_.
+
+Se tiene que utilizar un navegador específico, como es **TOR**.
