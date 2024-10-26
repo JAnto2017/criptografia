@@ -15,6 +15,7 @@
     - [Caracterísiticas básicas de los algoritmos HASH](#caracterísiticas-básicas-de-los-algoritmos-hash)
   - [Qué es la Firma Digital](#qué-es-la-firma-digital)
   - [Cómo funciona la red TOR y la DEEP WEB](#cómo-funciona-la-red-tor-y-la-deep-web)
+    - [Instalar TOR Browser](#instalar-tor-browser)
 
 - - -
 
@@ -211,6 +212,8 @@ La **Firma Digital** se basa en la criptografía de _clave asimétrica o públic
 
 ![alt text](image-7.png)
 
+- - -
+
 ![alt text](image-6.png)
 
 Los pasos para la realización de la **Firma Digital** y posterior _autenticación_ y _no repudio_ son los siguientes:
@@ -225,3 +228,17 @@ La arquitectura _cliente/servidor_ es la estándar. Desde el _cliente_ se realiz
 La arquitectura _onion routing_ (enrutamiento cebolla) se basa en las capas, varios servidor procesando la información solicitada. En cada uno de los servidores, se tiene una IP diferente. El objetivo es el _anonamito_.
 
 Se tiene que utilizar un navegador específico, como es **TOR**.
+
+### Instalar TOR Browser
+
+1. En buscador escribir _Tor_ y hacer clic en _The Project | Anonymity Online_.
+2. Clic en _Download Tor Browser_. Y hacer clic en _Download for linux_.
+3. Guardar _Save file as_ y en la carpeta de descarga veremos el fichero con extensión _.tar_
+4. Para descomprimir, escribir: `tar -xf tor-browserxxxx.tar.xz`.
+5. Entramos en la carpeta que se ha descomprimido, con el comando: `cd tor-browser`.
+6. Dentro de la carpeta, aparece un archivo y para ejecutarlo escribir: `./start-tor-browser.sh`.
+7. En la ventana que aparece, hacemos clic en _Connect_. Comenzará a establecer la conexión y al final del proceso, se abre el navegador.
+8. Para instalarlo desde la terminal: `sudo apt-get update` y para instalar `sudo apt-get install tor torbrowser-launcher`.
+9. Para lanzar **TOR** escribimos el comando en el terminal: `torbrowser-launcher`. La primera vez tarda un tiempo por las verificaciones de la firma.
+10. Una vez termina la verificación, sale una ventana en la haremos clic en _Connect_. 
+11. Una vez instalada, en aplicaciones,salen el buscador _Tor Browser_ y _Tor Browser Launcher_ que sirver para acceder de forma gráfica.
