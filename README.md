@@ -16,6 +16,8 @@
   - [Qué es la Firma Digital](#qué-es-la-firma-digital)
   - [Cómo funciona la red TOR y la DEEP WEB](#cómo-funciona-la-red-tor-y-la-deep-web)
     - [Instalar TOR Browser](#instalar-tor-browser)
+  - [Estenografía](#estenografía)
+  - [Red P2P](#red-p2p)
 
 - - -
 
@@ -240,5 +242,26 @@ Se tiene que utilizar un navegador específico, como es **TOR**.
 7. En la ventana que aparece, hacemos clic en _Connect_. Comenzará a establecer la conexión y al final del proceso, se abre el navegador.
 8. Para instalarlo desde la terminal: `sudo apt-get update` y para instalar `sudo apt-get install tor torbrowser-launcher`.
 9. Para lanzar **TOR** escribimos el comando en el terminal: `torbrowser-launcher`. La primera vez tarda un tiempo por las verificaciones de la firma.
-10. Una vez termina la verificación, sale una ventana en la haremos clic en _Connect_. 
+10. Una vez termina la verificación, sale una ventana en la haremos clic en _Connect_.
 11. Una vez instalada, en aplicaciones,salen el buscador _Tor Browser_ y _Tor Browser Launcher_ que sirver para acceder de forma gráfica.
+
+## Estenografía
+
+Insertar en una imagen un archivo sin alterar la imagen. Queda escondido dentro de la imagen. Cuanto más grande sea el archivo portador, más datos podremos ocultar en él.
+
+El archivo de imagen no funciona si tiene la extensión _png_. Debe ser _jpeg_ o _jpg_.
+
+Se utiliza la aplicación de terminal en Linux _steghide_.
+
+- Para incluir un archivo de texto dentro de un fichero de imagen: `steghide embed -cf imagen.jpg -ef texto.txt`. Nos pide contraseña y su confirmación.
+- Para extraer archivo que está oculto en fichero de imagen: `steghide extract -sf imagen.jpg`.
+- Si tenemos un archivo zip con contraseña lo pasamos a _Hash_ para utilizar la herramienta _John_ y crackearla: `zip2john backup.zip > hash`.
+- Para usar la herramienta _John_ sobre el archivo _hash_: `john --wordlist=/usr/share/wordlists/rockyou.txt hash`.
+
+## Red P2P
+
+Las arquitecturas de red describen cómo se organizan y comunican los dispositivos y aplicaciones dentro de una red. La arquitectura _peer-to-peer (P2P)_ no existe un servidor único que provee de los datos al resto de dispositivos que los solicitan, sino que cada PC actúa como servidor y como cliente en el proceso de intercambio de información.
+
+Existe la arquitectura _híbrida_ entre la _P2P_ y la de _cliente/servidor_.
+
+El la arquitectura _P2P_ los datos están descentralizados, estando repartidos en los dispositivos que están interconectados en ese instante.
